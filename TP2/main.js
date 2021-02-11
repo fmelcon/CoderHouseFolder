@@ -1,5 +1,5 @@
 //Ejercicio 1
-let input = prompt("Ingrese un numero: ");
+let input = prompt("Ingrese un numero:");
 input = parseInt(input);
 
 if (input > 1000) {
