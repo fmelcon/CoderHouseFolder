@@ -31,8 +31,8 @@ header .container{
 }
 #navegacion a{
 	font-size: 1.2rem;
-	padding-left: 1.2rem;
-	font-family: sans-serif;
+	padding: 0.7rem;
+	font-family: monospace;
 	text-decoration:none;
 }
 .submenu {
@@ -45,30 +45,64 @@ header .container{
 	display: block;
 	position: absolute;
 	right:0;
+	text-align: center;
 	text-decoration: none;
-	color:black;
+	color:rgb(255, 255, 255);
 	top:100%;
 	z-index: 1;
-	background-color: #eff6fd;
+	background-color: rgba(128, 126, 126, 0.829);
 	padding: 20px;
-	min-height: au;
-	min-width: auto;
+	min-height: 400px;
+	min-width: 300px;
 }
+
+td{
+	font-family: monospace;
+	padding: 0.5rem;
+	border-bottom: 1px solid rgb(150, 142, 142);
+}
+
+.borrar-curso{
+	font-family: monospace;
+	box-shadow: 1px 0 5px black;
+	background-color: rgb(255, 0, 0);
+	text-decoration: none;
+	border-radius: 50%;
+	color:white;
+}
+
+td img {
+	width:120px;
+}
+
 .submenu th{
+	border-bottom: 1px solid gray;
 	padding: 1rem;
 	text-decoration: none;
 	font-size: 1.2rem;
+	font-family: monospace;
 }
+
+.hero{
+	background: rgb(255,255,255);
+    background: linear-gradient(61deg, rgba(255,255,255,1) 0%, rgba(167,239,242,1) 37%, rgba(105,204,227,1) 62%, rgba(191,230,238,1) 100%);
+}
+
 .herotext{
 	text-align: center;
 	padding: 2rem;
 	font-size: 1.3rem;
 	border-radius: 0.31em;
-	background-color: rgb(239,246,253);
 }
 .hero h1{
 	font-size: 4rem;
 }
+
+.herotext p{
+	font-style: italic;
+	font-size: 1.5rem;
+}
+
 .slider {
 	height: 80vh;
 	width: 95%;
@@ -186,7 +220,7 @@ header .container{
 	justify-content: space-around;
 	flex-wrap: wrap;
 }
-.boton-agregar-carrito {
+.agregar-carrito {
 	text-decoration: none;
 	background: rgb(93, 134, 172);
 	color: #fff;
@@ -259,7 +293,31 @@ footer{
 		height: auto;
 	}
 }
-@media (max-width: 550px) {
+@media (max-width: 570px) {
+	.social-media {
+		margin: 0;
+	}
+
+	.social-media-icon{
+		margin: 1rem;
+	}
+
+	.footer-content{
+		padding-bottom: 0;
+	}
+
+	#navegacion a {
+		font-size: 1rem;
+	}
+	#navegacion{
+		text-align: center;
+	}
+
+	.submenu:hover #carrito {
+		position: inherit;
+		padding: 0;
+		min-height: auto;
+	}
 	.card {
 		text-align: left;
 	}
@@ -295,5 +353,11 @@ footer{
 	#navegacion a {
 		font-size: 0.8rem;
 		padding-left: 0.5rem;
+	}
+}
+
+@media (max-width: 400px) {
+	#navegacion a{
+		font-size: 7px;
 	}
 }
