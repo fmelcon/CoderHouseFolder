@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <style>
+      #app {
+        text-align: center;
+      }
+      body {
+        background-color: cadetblue;
+      }
+      span {
+        font-size: 4rem;
+        border-radius: 50%;
+        background-color: gainsboro;
+        padding: 20px;
+        margin: 15px;
+        color: rgb(32, 104, 94);
+      }
+      h1 {
+        text-align: center;
+        padding: 20px; 
+        color: white;
+      }
+      button {
+        font-size: 1.5rem;
+        border-color: rgb(82, 165, 154);
+        background-color: white;
+        box-shadow: 0 0 5px black;
+      }
+      button:hover {
+        background-color: rgb(32, 104, 94);
+        color: white;
+      }
+      div {
+        border-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Contador</h1>
+    <div id="app"></div>
+    <script type="text/babel">
+      const $app = document.getElementById("app");
+      const useState = React.useState;
+
+      function Contador() {
+        let [contadorValue, contadorAct] = useState(0);
+        return (
+          <div>
+            <button onClick={() => contadorAct(contadorValue + 1)}>
+              Incrementar +{" "}
+            </button>
+            <span> {contadorValue} </span>
+            <button onClick={() => contadorAct(contadorValue - 1)}>
+              Decrementar -{" "}
+            </button>
+          </div>
+        );
+      }
+
+      ReactDOM.render(
+        <div>
+          <Contador />
+        </div>,
+        $app
+      );
+    </script>
+  </body>
+</html>

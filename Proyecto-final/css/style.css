@@ -71,6 +71,11 @@ td{
 	color:white;
 }
 
+.borrar-curso:active{
+	background-color: rgb(184, 12, 12);
+	color: white;
+}
+
 td img {
 	width:120px;
 }
@@ -188,6 +193,11 @@ td img {
 .agregar-carrito {
 	margin:10px 0;
 }
+
+.agregar-carrito:active{
+	background-color: #736ea3;
+}
+
 .card {
 	width: auto;
 	height: auto;
