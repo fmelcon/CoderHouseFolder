@@ -114,9 +114,6 @@ function carritoHTML() {
             <td>
             $${total}
             </td>
-            <td>
-            ${totalCarrito}
-            </td>
             `
         //agrega el HTML del carrito
         contenedorCarrito.appendChild(row);
