@@ -15,10 +15,12 @@
 // Variables globales
 // =============================================================================
 
-const carrito = document.querySelector('#carrito');
-const contenedorCarrito = document.querySelector('#lista-carrito tbody');
-const listaCursos = document.querySelector('#lista-cursos');
+const $ = document.querySelector.bind(document);
+const carrito = $('#carrito');
+const contenedorCarrito = $('#lista-carrito tbody');
+const listaCursos = $('#lista-cursos');
 let articulosCarrito = [];
+const headerFix = $('#header-container');
 
 cargarEventListeners();
 
@@ -27,6 +29,22 @@ function cargarEventListeners() {
     listaCursos.addEventListener('click', agregarCurso);
     //Elimina un curso no deseado
     carrito.addEventListener('click', eliminarCurso);
+
+    // window.addEventListener('scroll', () =>{
+    //     const fixed = $('#experts');
+    //     const ubicacion = fixed.getBoundingClientRect();
+    //     console.log(ubicacion)
+    //     if (ubicacion.top - 10  && ubicacion.top > 400){
+    //         if(headerFix.classList.contains('active') && ubicacion.top > 0){
+    //             headerFix.classList.remove('active');
+
+    //         }else{
+    //             headerFix.classList.add('active');
+    //         }
+
+    //         }
+    //     }
+    // );
 
     document.addEventListener('DOMContentLoaded', () => {
         articulosCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
@@ -37,6 +55,8 @@ function cargarEventListeners() {
 // =============================================================================
 // Funciones
 // =============================================================================
+
+window.addEventListener
 
 function eliminarCurso(e) {
     if (e.target.classList.contains('borrar-curso')) {
@@ -90,14 +110,12 @@ function leerDatosCurso(curso) {
     carritoHTML();
 }
 
-
-
 //imprime carrito en el HTML
 
 function carritoHTML() {
     //limpia html antes de imprimir
     limpiarHTML();
-
+    let totalCarrito = 0.00;
     articulosCarrito.forEach(curso => {
 
         const row = document.createElement('tr');
@@ -106,7 +124,7 @@ function carritoHTML() {
         row.innerHTML = `
             <td><img src="${imagen}"</td>
             <td>${titulo}</td>
-            <td>${precio}</td>
+            <td>$${precio}</td>
             <td>${cantidad}</td>
             <td>
                 <a href="#" class="borrar-curso" data-id="${id}">X </a>
@@ -116,9 +134,11 @@ function carritoHTML() {
             </td>
             `
         //agrega el HTML del carrito
+        totalCarrito += total;
         contenedorCarrito.appendChild(row);
 
     });
+    $('#totalCarrito').textContent = `$ ${totalCarrito.toFixed(2)}`
     //agregar local storage
     sincronizarStorage()
 }

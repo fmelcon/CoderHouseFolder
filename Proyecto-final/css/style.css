@@ -14,10 +14,9 @@ header .container{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0.625rem;
 }
 .logo {
-	width: 100px;
+	width: 80px;
 }
 .logo-name{
 	font-family: monospace;
@@ -26,24 +25,35 @@ header .container{
 }
 .logo_name{
 	font-family: monospace;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	color: rgb(32, 32, 34);
 }
 
-#header{
-	width: 100vw;
-	background-color: rgb(255, 255, 255);
-	display: flex;
-	justify-content: space-between;
-	position: fixed;
-    z-index: 100;
+.divisor{
+	padding: 2rem;
 }
 
-#navegacion a{
-	font-size: 1.2rem;
-	padding: 0.7rem;
-	font-family: monospace;
-	text-decoration:none;
+#header{
+	box-shadow: 0px 5px 5px rgba(0, 0, 0, .2);
+	background-color: rgb(255, 255, 255);
+    z-index: 100;
+	width: 100vw;
+	position:fixed;
+}
+
+a{
+	text-decoration: none;
+}
+
+a:visited{
+	color: black;
+}
+
+#navegacion a{		
+	padding: 0.80rem;
+	font-family: system-ui;
+	text-decoration: none;
+
 }
 .submenu {
 	position: relative;
@@ -64,6 +74,13 @@ header .container{
 	padding: 20px;
 	min-height: 400px;
 	min-width: 300px;
+}
+
+#img-carrito{
+
+    position: relative;
+    top: 7px;
+
 }
 
 td{
@@ -374,10 +391,33 @@ footer{
 		font-size: 0.8rem;
 		padding-left: 0.5rem;
 	}
+
+	.submenu th {
+		font-size: 0.75rem;
+	}
 }
 
 @media (max-width: 400px) {
 	#navegacion a{
 		font-size: 7px;
+	}
+
+	#img-carrito {
+		font-size: 1rem;
+		top: 4px;
+		width: 20px;
+	}
+
+	#navegacion a {
+		font-size: 15px;
+	}
+
+	.submenu th {
+		padding: 12px;
+		font-size: 12px;
+	}
+
+	td {
+		padding: 0.3rem;
 	}
 }
