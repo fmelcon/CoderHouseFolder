@@ -30,35 +30,19 @@ function cargarEventListeners() {
     //Elimina un curso no deseado
     carrito.addEventListener('click', eliminarCurso);
 
-    // window.addEventListener('scroll', () =>{
-    //     const fixed = $('#experts');
-    //     const ubicacion = fixed.getBoundingClientRect();
-    //     console.log(ubicacion)
-    //     if (ubicacion.top - 10  && ubicacion.top > 400){
-    //         if(headerFix.classList.contains('active') && ubicacion.top > 0){
-    //             headerFix.classList.remove('active');
-
-    //         }else{
-    //             headerFix.classList.add('active');
-    //         }
-
-    //         }
-    //     }
-    // );
-
     document.addEventListener('DOMContentLoaded', () => {
         articulosCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
         carritoHTML();
     })
 }
+
 // =============================================================================
 // Funciones
 // =============================================================================
 
-window.addEventListener
-
 function eliminarCurso(e) {
+    e.preventDefault();
     if (e.target.classList.contains('borrar-curso')) {
         const cursoId = e
             .target
