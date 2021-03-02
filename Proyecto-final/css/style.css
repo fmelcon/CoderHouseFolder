@@ -52,7 +52,7 @@ a:visited{
 }
 
 #navegacion a{		
-	padding: 0.80rem;
+	padding: 0.3rem 0.6rem;
 	font-family: system-ui;
 	text-decoration: none;
 
@@ -79,10 +79,8 @@ a:visited{
 }
 
 #img-carrito{
-
     position: relative;
     top: 7px;
-
 }
 
 td{
@@ -331,6 +329,13 @@ footer{
 	text-align: center;
 	color: #fff;
 }
+
+@media (max-width:1368px){
+	#headfix.is-fixed {
+	padding: 0 3%;
+	}
+}
+
 @media (max-width: 1024px) {
 	.slider{
 		height: auto;
