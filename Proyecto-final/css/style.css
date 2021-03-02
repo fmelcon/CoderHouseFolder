@@ -10,11 +10,12 @@ body {
 	max-width: 1200px;
 	margin: auto;
 }
-header .container{
+#header .container {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
+
 .logo {
 	width: 80px;
 }
@@ -33,12 +34,13 @@ header .container{
 	padding: 2rem;
 }
 
-#header{
+#headfix.is-fixed {
 	box-shadow: 0px 5px 5px rgba(0, 0, 0, .2);
-	background-color: rgb(255, 255, 255);
-    z-index: 100;
-	width: 100vw;
-	position:fixed;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    padding: 0 22%;
+    width: 100vw;
+    position: fixed;
 }
 
 a{

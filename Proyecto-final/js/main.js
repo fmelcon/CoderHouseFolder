@@ -20,7 +20,6 @@ const carrito = $('#carrito');
 const contenedorCarrito = $('#lista-carrito tbody');
 const listaCursos = $('#lista-cursos');
 let articulosCarrito = [];
-const headerFix = $('#header-container');
 
 cargarEventListeners();
 
@@ -29,6 +28,8 @@ function cargarEventListeners() {
     listaCursos.addEventListener('click', agregarCurso);
     //Elimina un curso no deseado
     carrito.addEventListener('click', eliminarCurso);
+
+    window.addEventListener('scroll', stickyElement);
 
     document.addEventListener('DOMContentLoaded', () => {
         articulosCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
@@ -40,6 +41,21 @@ function cargarEventListeners() {
 // =============================================================================
 // Funciones
 // =============================================================================
+
+function stickyElement(e) {
+    const header = $('#headfix');
+    const headerHeight = getComputedStyle(header).height.split('px')[0];
+    const navbar = $('#headfix');  
+    const scrollValue = window.scrollY;
+    
+    if (scrollValue > headerHeight){
+    navbar.classList.add('is-fixed');
+    
+    } else if (scrollValue < headerHeight){
+    navbar.classList.remove('is-fixed');
+    
+    }
+}
 
 function eliminarCurso(e) {
     e.preventDefault();
